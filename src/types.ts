@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ChangeEvent, ReactNode } from "react"
 
 export type UserProviderProps = {
     children: ReactNode
@@ -7,21 +7,21 @@ export type UserProviderProps = {
 export type ModalContext = {
     modalData: ModalType[],
     setModalData: (a:ModalType[]) => void,
-    openModal: (id:string) => void,
-    createModal: (formValues:FormState) => void
+    openModal: string,
+    setOpenModal: (id:string) => void
+    createModal: (formValues:FormState) => void,
+    updateModal: (formValues:FormState, id:string) => void,
 }
 
 export type ModalType = {
     id:string,
-    open:boolean,
     ref: string,
     title: string,
     content: string
 }
 
 export type ModalState = {
-    data: ModalType,
-    openModal: (id:string) => void
+    data: ModalType
 }
 
 export type Options = {
@@ -36,14 +36,16 @@ export type MenuContext = {
     options: Options,
     setOptions: (a:Options) => void,
     changeOptions: (e:any) => void,
-    hideMenu:(id:string, fun:(id:string) => void) => void
 }
 
 export type FormContext = {
     openForm: boolean,
     setOpenForm: (a:boolean) => void,
     formValues: FormState,
-    handleInputChange: (e:React.ChangeEvent<HTMLInputElement>) => void
+    handleInputChange: (e:React.ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => void,
+    editId: string,
+    setEditId:(a:string) => void,
+    setFormValues: (a:FormState) => void
 }
 
 export type FormState = {

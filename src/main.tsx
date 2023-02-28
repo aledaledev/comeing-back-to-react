@@ -4,7 +4,7 @@ import App from "./App";
 import { ModalProvider } from "./context/ModalContext";
 import { MenuProvider } from "./context/MenuContext";
 import "./assets/styles/index.css";
-import { CreateProvider } from "./context/CreateFormContext";
+import { CreateProvider } from "./context/FormContext";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

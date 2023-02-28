@@ -4,12 +4,12 @@ import Modal from './Modal'
 
 const Modals = () => {
 
-  const { modalData, openModal } = useModal()
+  const { modalData } = useModal()
 
   return (
     <>
       {modalData.map((data) => (
-        <Modal key={data.id} data={data} openModal={openModal}/>
+        <Modal key={data.id} data={data}/>
       ))}
     </>
   )

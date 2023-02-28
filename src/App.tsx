@@ -1,7 +1,7 @@
 import BtnOpenModals from './components/BtnOpenModals'
 import Menu from './components/Menu'
 import Modals from './components/Modals'
-import CreateModal from './components/CreateModal'
+import FormModal from './components/FormModal'
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
     <main>
       <Menu/>
       <BtnOpenModals/>
-      <CreateModal/>
+      <FormModal/>
       <Modals/>
     </main>
   )
